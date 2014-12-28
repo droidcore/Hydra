@@ -382,6 +382,19 @@ void cpufreq_notify_utilization(struct cpufreq_policy *policy,
 		policy->util = util;
 }
 
+/**
+ * cpufreq_notify_utilization - notify CPU userspace about CPU utilization
+ * change
+ *
+ * This function is called everytime the CPU load is evaluated by the
+ * ondemand governor. It notifies userspace of cpu load changes via sysfs.
+ */
+void cpufreq_notify_utilization(struct cpufreq_policy *policy,
+		unsigned int util)
+{
+	if (policy)
+		policy->util = util;
+}
 
 /*********************************************************************
  *                          SYSFS INTERFACE                          *
@@ -1724,7 +1737,10 @@ static void cpufreq_out_of_sync(unsigned int cpu, unsigned int old_freq,
  * This is the last known util, without actually getting it from the driver.
  * Return value will be same as what is shown in util in sysfs.
  */
+<<<<<<< HEAD
 
+=======
+>>>>>>> e670f41... cpufreq: add an helper to get/set cpu utilization to be used by mako_hotplug
 unsigned int cpufreq_quick_get_util(unsigned int cpu)
 {
 	struct cpufreq_policy *policy = cpufreq_cpu_get(cpu);
@@ -1739,7 +1755,10 @@ unsigned int cpufreq_quick_get_util(unsigned int cpu)
 }
 EXPORT_SYMBOL(cpufreq_quick_get_util);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e670f41... cpufreq: add an helper to get/set cpu utilization to be used by mako_hotplug
 /**
  * cpufreq_quick_get - get the CPU frequency (in kHz) from policy->cur
  * @cpu: CPU number
