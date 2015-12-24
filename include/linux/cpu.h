@@ -289,6 +289,8 @@ unsigned int power_cost_at_freq_at_temp(
 	long temp);
 #endif
 
+int register_cpu_pwr_stats_ready_notifier(struct notifier_block *nb);
+
 enum cpuhp_state {
 	CPUHP_OFFLINE,
 	CPUHP_ONLINE,
