@@ -988,12 +988,17 @@ static int mdss_dsi_panel_on(struct mdss_panel_data *pdata)
 <<<<<<< HEAD
 	display_on = true;
 
+<<<<<<< HEAD
 =======
 #ifdef CONFIG_POWERSUSPEND
 	set_power_suspend_state_panel_hook(POWER_SUSPEND_INACTIVE);
 #endif
 	
 >>>>>>> 78d997f... kernel/power/powersuspend: new PM kernel driver for Android w/o early_suspend v1.5 (faux123/Yank555.lu)
+=======
+	display_on = true;
+
+>>>>>>> 04d881d... display: add a simple api to query the display state (on/off) at any point in time
 	pinfo = &pdata->panel_info;
 	ctrl = container_of(pdata, struct mdss_dsi_ctrl_pdata,
 				panel_data);
@@ -1127,6 +1132,8 @@ static int mdss_dsi_panel_off(struct mdss_panel_data *pdata)
 #ifdef CONFIG_POWERSUSPEND
 	set_power_suspend_state_panel_hook(POWER_SUSPEND_ACTIVE);
 #endif
+
+	display_on = false;
 
 end:
 	pinfo->blank_state = MDSS_PANEL_BLANK_BLANK;
