@@ -656,9 +656,19 @@ config KERNEL_TEXT_MPU_PROT
 	  all masters; Write access is only permited to the
 	  secure world.
 
+<<<<<<< HEAD
 config STATE_NOTIFIER
         bool "State Notifier"
 	default n
+=======
+config MSM_HOTPLUG
+	bool "MSM hotplug driver"
+	depends on HOTPLUG_CPU
+	default n
+	help
+	  The MSM hotplug driver controls on-/offlining of additional cores based
+	  on current cpu load.
+>>>>>>> f963be3... soc: qcom: msm_hotplug v2
 
 source "drivers/soc/qcom/memshare/Kconfig"
 
