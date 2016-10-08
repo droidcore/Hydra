@@ -38,7 +38,6 @@
 //static int rf_wlan_test_mode=0;
 
 #endif
-struct mdss_dsi_pwrctrl pwrctrl_pdata;
 
 #ifdef CONFIG_STATE_NOTIFIER
 #include <linux/state_notifier.h>
