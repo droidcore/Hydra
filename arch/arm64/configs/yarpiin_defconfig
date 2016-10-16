@@ -4122,6 +4122,7 @@ CONFIG_QMI_ENCDEC=y
 #
 
 CONFIG_HIMA_HOTPLUG=y 
+CONFIG_ASMP=y
 
 #
 # Additional Settings

@@ -54,6 +54,7 @@ obj-y		+= socinfo.o
 
 obj-$(CONFIG_MSM_HVC) += hvc.o
 obj-$(CONFIG_MSM_HYP_DEBUG) += hyp-debug.o
+obj-$(CONFIG_ASMP) 	      += autosmp.o
 
 obj-$(CONFIG_MSM_PIL) += peripheral-loader.o
 obj-$(CONFIG_MSM_PIL_SSR_GENERIC) += subsys-pil-tz.o
