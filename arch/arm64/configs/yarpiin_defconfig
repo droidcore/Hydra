@@ -4144,4 +4144,8 @@ CONFIG_WQ_POWER_EFFICIENT_DEFAULT=y
 CONFIG_POWERSUSPEND=y 
 CONFIG_ADRENO_IDLER=y 
 CONFIG_QUICK_WAKEUP=y 
+<<<<<<< HEAD
 >>>>>>> 928ded4... yarpiin defconfig: enable quickwakeup
+=======
+CONFIG_BOEFFLA_TOUCH_KEY_CONTROL=y 
+>>>>>>> fa3dce9... yarpiin defconfig: enable Boeffla touchkey control driver
