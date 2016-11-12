@@ -233,6 +233,12 @@ config CPU_FREQ_DEFAULT_GOV_ALUCARD
 	  driver. Fallback governor will be the performance governor.
 
 
+config CPU_FREQ_DEFAULT_GOV_BLUACTIVE
+	bool "bluactive"
+	select CPU_FREQ_GOV_BLUACTIVE
+	help
+	Use the CPUFreq governor 'bluactive' as default.
+
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -481,7 +487,16 @@ config CPU_FREQ_GOV_ALUCARD
 
 	  If in doubt, say N.
 
+<<<<<<< HEAD
 >>>>>>> e987ee3... add Alucard gov
+=======
+config CPU_FREQ_GOV_BLUACTIVE
+	tristate "'bluactive' cpufreq governor"
+	depends on CPU_FREQ
+	help
+	  'bluactive' - less aggressive version of interactive
+
+>>>>>>> 29c3adc... add Blu Active gov
 config CPU_BOOST
 	tristate "Event base short term CPU freq boost"
 	depends on CPU_FREQ
