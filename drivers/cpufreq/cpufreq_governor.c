@@ -304,10 +304,6 @@ int cpufreq_governor_dbs(struct cpufreq_policy *policy,
 			rc = cdata->init_ex(dbs_data, policy);
 		} else if (cdata->governor == GOV_ZZMOOVE) {
 			rc = cdata->init_zz(dbs_data, policy);
-		} else if (cdata->governor == GOV_CONSERVATIVE) {
-			rc = cdata->init_cs(dbs_data, policy);
-		} else if (cdata->governor == GOV_ONDEMAND) {
-			rc = cdata->init_od(dbs_data, policy);
 		} else {
 			rc = cdata->init(dbs_data);
 		}
@@ -511,7 +507,7 @@ int cpufreq_governor_dbs(struct cpufreq_policy *policy,
 		else if (policy->min > cpu_cdbs->cur_policy->cur)
 			__cpufreq_driver_target(cpu_cdbs->cur_policy,
 					policy->min, CPUFREQ_RELATION_L);
-//		dbs_check_cpu(dbs_data, cpu);
+		dbs_check_cpu(dbs_data, cpu);
 		mutex_unlock(&cpu_cdbs->timer_mutex);
 		mutex_unlock(&dbs_data->mutex);
 		break;
