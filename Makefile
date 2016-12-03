@@ -5,8 +5,12 @@ SUBLEVEL = 104
 EXTRAVERSION =
 =======
 SUBLEVEL = 84
+<<<<<<< HEAD
 EXTRAVERSION = -Abyss-1.00
 >>>>>>> 965d32a... [DIRTY] build: add back environment
+=======
+EXTRAVERSION = -Abyss-1.00-rc3
+>>>>>>> e4bc2be... [DIRTY] build: add more
 NAME = TOSSUG Baby Fish
 
 # *DOCUMENTATION*
