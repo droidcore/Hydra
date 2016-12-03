@@ -20,7 +20,7 @@ export CROSS_COMPILE=${HOME}/toolchains/aarch64-linux-android-4.9-kernel-linaro/
 KERNEL_DIR="${HOME}/kernel/oneplus2"
 ANYKERNEL_DIR="$KERNEL_DIR/anykernel2"
 MODULES_DIR="$ANYKERNEL_DIR/modules"
-ZIP_MOVE_NIGHTLY="${HOME}/kernel/out/$DEVICE/nightly"
+ZIP_MOVE_NIGHTLY="${HOME}/kernel/out/$DEVICE"
 ZIMAGE_DIR="$KERNEL_DIR/arch/arm64/boot"
 KERNEL_VER=$( grep -r "EXTRAVERSION = -Abyss-" ${KERNEL_DIR}/Makefile | sed 's/EXTRAVERSION = -Abyss-//' )
 
