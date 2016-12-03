@@ -238,6 +238,8 @@ patch_fstab() {
 # set permissions for included files
 chmod -R 755 $ramdisk
 
+# my applied settings
+insert_line init.qcom.rc "init.abyss.rc" after "import init.qcom.usb.rc" "import init.abyss.rc";
 
 ## AnyKernel install
 dump_boot;
