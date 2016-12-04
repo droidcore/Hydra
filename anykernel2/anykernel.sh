@@ -238,9 +238,6 @@ patch_fstab() {
 # set permissions for included files
 chmod -R 755 $ramdisk
 
-# my applied settings
-insert_line init.qcom.rc "init.abyss.rc" after "import init.qcom.usb.rc" "import init.abyss.rc";
-
 ## AnyKernel install
 dump_boot;
 
@@ -253,6 +250,10 @@ insert_line ueventd.rc "erandom" after "urandom" "/dev/erandom              0666
 backup_file file_contexts;
 insert_line file_contexts "frandom" after "urandom" "/dev/frandom		u:object_r:frandom_device:s0\n";
 insert_line file_contexts "erandom" after "urandom" "/dev/erandom		u:object_r:erandom_device:s0\n";
+
+# my applied settings
+backup_file init.qcom.rc;
+insert_line init.qcom.rc "init.abyss.rc" after "import init.qcom.usb.rc" "import init.abyss.rc";
 
 # end ramdisk changes
 
