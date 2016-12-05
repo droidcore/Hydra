@@ -49,6 +49,7 @@ function make_zip {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 echo "    ___    __                                            ";
 echo "   /   |  / /_  __  ____________                         ";
 echo "  / /| | / __ \/ / / / ___/ ___/                         ";
@@ -64,6 +65,8 @@ echo "                                                         ";
 echo
 echo "YOU ARE BUILDING ABYSS-$KERNEL_VER";
 =======
+=======
+>>>>>>> da4f7ef... anykernel2: new ASCII and stuff
 cat << "EOF"
 
              7=7777777M
@@ -87,6 +90,9 @@ M     MOOM      O$$M  $Z  MOM
 EOF
 
 echo "You are building abyss $KERNEL_VER for $DEVICE";
+<<<<<<< HEAD
+>>>>>>> da4f7ef... anykernel2: new ASCII and stuff
+=======
 >>>>>>> da4f7ef... anykernel2: new ASCII and stuff
 echo
 >>>>>>> 0570c90... build: initialize build environment
