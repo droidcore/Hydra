@@ -251,6 +251,35 @@ config CPU_FREQ_DEFAULT_GOV_CHILL
 	  governor. If unsure have a look at the help section of the
 	  driver. Fallback governor will be the interactive governor.
 
+<<<<<<< HEAD
+=======
+config CPU_FREQ_DEFAULT_GOV_BLU_ACTIVE
+	bool "blu_active"
+	select CPU_FREQ_GOV_BLU_ACTIVE
+	help
+	  Use the CPUFreq governor 'blu_active' as default. This allows
+	  you to get a full dynamic cpu frequency capable system by simply
+	  loading your cpufreq low-level hardware driver, using the
+	  'interactive' governor for latency-sensitive workloads.
+
+config CPU_FREQ_DEFAULT_GOV_IRONACTIVE
+	bool "ironactive"
+	select CPU_FREQ_GOV_IRONACTIVE
+	help
+	  Use the CPUFreq governor 'ironactive' as default. This cpugovernor
+	  is based on the 'interactive' governor with many changes made by
+	  CAF.
+
+config CPU_FREQ_DEFAULT_GOV_FLASH
+        bool "flash"
+        select CPU_FREQ_GOV_FLASH
+        help
+          Use the CPUFreq governor 'flash' as default. This allows
+          you to get a full dynamic cpu frequency capable system by simply
+          loading your cpufreq low-level hardware driver, using the
+          'flash' governor for latency-sensitive workloads.
+
+>>>>>>> 9a2e8be... drivers: cpufreq: add Flash governor
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -512,6 +541,7 @@ config CPU_FREQ_GOV_ALUCARD
 	  If in doubt, say N.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> e987ee3... add Alucard gov
 =======
 config CPU_FREQ_GOV_BLUACTIVE
@@ -521,6 +551,25 @@ config CPU_FREQ_GOV_BLUACTIVE
 	  'bluactive' - less aggressive version of interactive
 
 >>>>>>> 29c3adc... add Blu Active gov
+=======
+config CPU_FREQ_GOV_FLASH
+        tristate "'flash' cpufreq policy governor"
+        help
+          'flash' - This driver adds a dynamic cpufreq policy governor
+          designed for latency-sensitive workloads.
+
+          This governor attempts to reduce the latency of clock
+          increases so that the system is more responsive to
+          interactive workloads.
+
+          To compile this driver as a module, choose M here: the
+          module will be called cpufreq_flash.
+
+          For details, take a look at linux/Documentation/cpu-freq.
+
+          If in doubt, say N.
+
+>>>>>>> 9a2e8be... drivers: cpufreq: add Flash governor
 config CPU_BOOST
 	tristate "Event base short term CPU freq boost"
 	depends on CPU_FREQ
