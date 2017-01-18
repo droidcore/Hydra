@@ -18,7 +18,7 @@ export CROSS_COMPILE=${HOME}/toolchains/aarch64-linux-android-4.9-kernel-linaro/
 
 # Paths
 KERNEL_DIR="${HOME}/kernel/oneplus2"
-ANYKERNEL_DIR="${HOME}/kernel/anykernel2"
+ANYKERNEL_DIR="$KERNEL_DIR/anykernel2"
 MODULES_DIR="$ANYKERNEL_DIR/modules"
 ZIP_MOVE_NIGHTLY="${HOME}/kernel/out/$DEVICE/nightly"
 ZIMAGE_DIR="$KERNEL_DIR/arch/arm64/boot"
@@ -57,6 +57,12 @@ echo "                           / ,< / _ \/ ___/ __ \/ _ \/ / ";
 echo "                          / /| /  __/ /  / / / /  __/ /  ";
 echo "                         /_/ |_\___/_/  /_/ /_/\___/_/   ";
 echo "                                                         ";
+<<<<<<< HEAD
+=======
+echo
+echo "YOU ARE BUILDING ABYSS-$KERNEL_VER";
+echo
+>>>>>>> 0570c90... build: initialize build environment
 
 while read -p "Do you want to clean stuffs (y/n)? " cchoice
 do
