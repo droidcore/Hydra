@@ -1,32 +1,7 @@
 VERSION = 3
 PATCHLEVEL = 10
-<<<<<<< HEAD
-SUBLEVEL = 104
-EXTRAVERSION =
-=======
 SUBLEVEL = 84
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-EXTRAVERSION = -Abyss-1.00
->>>>>>> 965d32a... [DIRTY] build: add back environment
-=======
-EXTRAVERSION = -Abyss-1.00-rc3
->>>>>>> e4bc2be... [DIRTY] build: add more
-=======
-EXTRAVERSION =
->>>>>>> aa4c865... build: reset environment
-=======
-EXTRAVERSION = -Abyss-1.00
->>>>>>> 0570c90... build: initialize build environment
-=======
-EXTRAVERSION = -Abyss-1.10
->>>>>>> 40666d7... Abyss 1.10
-=======
-EXTRAVERSION = -Abyss-1.20
->>>>>>> 94246c2... Abyss 1.20
+EXTRAVERSION = Hydra.R1
 NAME = TOSSUG Baby Fish
 
 # *DOCUMENTATION*
@@ -403,6 +378,7 @@ KBUILD_CPPFLAGS := -D__KERNEL__
 KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-strict-aliasing -fno-common \
 		   -Werror-implicit-function-declaration \
+		   -mcpu=cortex-a57.cortex-a53 -mtune=cortex-a57.cortex-a53 \
 		   -Wno-format-security \
 		   -fno-delete-null-pointer-checks \
 		   -std=gnu89
