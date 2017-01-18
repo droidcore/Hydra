@@ -27,6 +27,7 @@ KERNEL_VER=$( grep -r "EXTRAVERSION = -Abyss-" ${KERNEL_DIR}/Makefile | sed 's/E
 # Functions
 function clean_all {
 		echo
+		find . -name "*~" -type f -delete
 		rm -rf $ANYKERNEL_DIR/$KERNEL
 		rm -rf $MODULES_DIR/*
 		make clean && make mrproper
@@ -47,6 +48,7 @@ function make_zip {
 		cd $KERNEL_DIR
 }
 
+<<<<<<< HEAD
 echo "    ___    __                                            ";
 echo "   /   |  / /_  __  ____________                         ";
 echo "  / /| | / __ \/ / / / ___/ ___/                         ";
@@ -61,6 +63,31 @@ echo "                                                         ";
 =======
 echo
 echo "YOU ARE BUILDING ABYSS-$KERNEL_VER";
+=======
+cat << "EOF"
+
+             7=7777777M
+           7=7777777777$
+          7=77777777777O$M
+         7=77777777777ZZ$$
+         7=777777777777$$$M
+         7=7777MM777MM$$$$M
+          7=Z7M777M7D77$$$        M8
+  ?$?      M77N0=M7000$$M         $$Z
+ MO    M    $$7777$$$$$$$        $Z  8Z
+  OO       $OOMM$ZM$ZM$ZZ$N    M$Z
+   OO$$$$$OO  M$ZMO$$MM$ZOZZ$$$ZM
+         MMZ$$ZM MM$Z M$ZOO
+M$ZZZDMMMMM88M   O$$M ZZM OO
+M     MOOM      O$$M  $Z  MOM
+     OM M$$$M   $Z    $   MZZ
+      M     ZZ$ZMD   MZM$ZM8 MM
+                  O   $O  O
+
+EOF
+
+echo "You are building abyss $KERNEL_VER for $DEVICE";
+>>>>>>> da4f7ef... anykernel2: new ASCII and stuff
 echo
 >>>>>>> 0570c90... build: initialize build environment
 
@@ -116,5 +143,6 @@ done
 
 DATE_END=$(date +"%s")
 DIFF=$(($DATE_END - $DATE_START))
+echo
 echo "Time: $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) seconds."
 echo
