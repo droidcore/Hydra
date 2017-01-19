@@ -445,10 +445,14 @@ static void wakeup_source_activate(struct wakeup_source *ws)
 		return;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 31c2949... power: validate wakeup source before activating it.
 	if (WARN(wakeup_source_not_registered(ws),
 			"unregistered wakeup source\n"))
 		return;
 
+<<<<<<< HEAD
 =======
 	if (!enable_si_ws && !strcmp(ws->name, "sensor_ind"))
 		return;
@@ -466,6 +470,8 @@ static void wakeup_source_activate(struct wakeup_source *ws)
                 return;
 
 >>>>>>> 6dce46f... wake:togle for wlan wakelock
+=======
+>>>>>>> 31c2949... power: validate wakeup source before activating it.
 	/*
 	 * active wakeup source should bring the system
 	 * out of PM_SUSPEND_FREEZE state
