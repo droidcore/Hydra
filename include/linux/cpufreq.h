@@ -100,10 +100,6 @@ struct cpufreq_policy {
 	 *     __cpufreq_governor(data, CPUFREQ_GOV_POLICY_EXIT);
 	 */
 	struct rw_semaphore	rwsem;
-<<<<<<< HEAD
-=======
-
->>>>>>> e670f41... cpufreq: add an helper to get/set cpu utilization to be used by mako_hotplug
 	unsigned int util;
 };
 

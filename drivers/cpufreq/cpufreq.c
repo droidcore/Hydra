@@ -30,7 +30,6 @@
 #include <linux/tick.h>
 #include <trace/events/power.h>
 
-<<<<<<< HEAD
 static unsigned int min_freq_hardlimit[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 static unsigned int max_freq_hardlimit[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -41,12 +40,11 @@ static char governor_hard[8][GOVERNOR_NAME_MAX];
 #define CONFIG_MSM_CPU_FREQ_MAX_GROUP1 1555200
 #define CONFIG_MSM_CPU_FREQ_MIN_GROUP2 302000
 #define CONFIG_MSM_CPU_FREQ_MAX_GROUP2 1766400
-=======
+
 /* HACK: Prevent big cluster turned off when changing governor settings. */
 #ifdef CONFIG_MSM_HOTPLUG
 #include <linux/workqueue.h>
 #endif
->>>>>>> f963be3... soc: qcom: msm_hotplug v2
 
 /**
  * The "cpufreq driver" - the arch- or hardware-dependent low
@@ -1737,10 +1735,7 @@ static void cpufreq_out_of_sync(unsigned int cpu, unsigned int old_freq,
  * This is the last known util, without actually getting it from the driver.
  * Return value will be same as what is shown in util in sysfs.
  */
-<<<<<<< HEAD
 
-=======
->>>>>>> e670f41... cpufreq: add an helper to get/set cpu utilization to be used by mako_hotplug
 unsigned int cpufreq_quick_get_util(unsigned int cpu)
 {
 	struct cpufreq_policy *policy = cpufreq_cpu_get(cpu);
@@ -1755,10 +1750,6 @@ unsigned int cpufreq_quick_get_util(unsigned int cpu)
 }
 EXPORT_SYMBOL(cpufreq_quick_get_util);
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e670f41... cpufreq: add an helper to get/set cpu utilization to be used by mako_hotplug
 /**
  * cpufreq_quick_get - get the CPU frequency (in kHz) from policy->cur
  * @cpu: CPU number
