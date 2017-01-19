@@ -607,11 +607,7 @@ void __init paging_init(void)
 	empty_zero_page = virt_to_page(zero_page);
 
 	/* Ensure the zero page is visible to the page table walker */
-<<<<<<< HEAD
-	dsb(ishst);
-=======
 	dsb(sy);
->>>>>>> ef4d327... mm: fix missing immediate expression at operand 1 dsb
 
 	/*
 	 * TTBR0 is only used for the identity mapping at this stage. Make it
