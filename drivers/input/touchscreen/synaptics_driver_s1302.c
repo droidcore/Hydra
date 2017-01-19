@@ -57,6 +57,11 @@
 #include "synaptics_s1302_redremote.h"
 #include <linux/boot_mode.h>
 #include <linux/project_info.h>
+
+#ifdef CONFIG_BOEFFLA_TOUCH_KEY_CONTROL
+#include <linux/boeffla_touchkey_control.h>
+#endif
+
 /*------------------------------------------------Global Define--------------------------------------------*/
 #define TP_TEST_ENABLE 1
 #define SYNAPTICS_NAME "synaptics"
@@ -299,6 +304,8 @@ struct synaptics_ts_data {
 	char fw_name[TP_FW_NAME_MAX_LEN];
 	char fw_id[12];
 	char manu_name[12];
+	
+	bool stop_keypad;
 };
 /*
 static int tc_hw_pwron(struct synaptics_ts_data *ts)
@@ -751,12 +758,17 @@ static void synaptics_ts_report(struct synaptics_ts_data *ts )
         //goto END;
     }
     if( inte & 0x10) {
+#ifdef CONFIG_BOEFFLA_TOUCH_KEY_CONTROL
+		btkc_touch_button();
+#endif
 #ifdef VENDOR_EDIT //WayneChang, 2015/12/29, add flag to enable virtual key
 	if(!virtual_key_enable){
-		int_key(ts);
+		if (!ts->stop_keypad)
+			int_key(ts);
 	}
 #else
-        int_key(ts);
+        if (!ts->stop_keypad)
+			int_key(ts);
 #endif
     }
 END:
@@ -1508,8 +1520,6 @@ static int synaptics_parse_dts(struct device *dev, struct synaptics_ts_data *ts)
 	}
 	return rc;
 }
-<<<<<<< HEAD
-=======
 
 bool s1302_is_keypad_stopped(void)
 {
@@ -1585,7 +1595,6 @@ static struct input_handler synaptics_input_handler = {
 	.id_table	= synaptics_input_ids,
 };
 
->>>>>>> 5878ab2... misc: fpc1020: Ignore home key presses when touchscreen is in use
 static int synaptics_ts_probe(struct i2c_client *client, const struct i2c_device_id *id)
 {
 #ifdef CONFIG_SYNAPTIC_RED
@@ -1704,6 +1713,11 @@ static int synaptics_ts_probe(struct i2c_client *client, const struct i2c_device
 		register_remote_device_s1302(premote_data);
     }
 #endif
+
+	ret = input_register_handler(&synaptics_input_handler);
+	if (ret)
+		TPD_ERR("%s: Failed to register input handler\n", __func__);
+
 	TPDTM_DMESG("synaptics_ts_probe s1302: normal end\n");
 	return 0;
 
